@@ -4,8 +4,12 @@ import List from './Components/List';
 
 function App(props) {
   const lists = props.store.lists.map((list) => {
-    return <List key={list.id} header={list.header} cards={list.cardIds}/>
+    const cards = list.cardIds.map(cardId => {
+      return props.store.allCards[cardId];
+    })
+    return <List key={list.id} header={list.header} cards={cards}/>
   })
+
 
   return (
     <main className='App'>
