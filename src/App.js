@@ -9,7 +9,7 @@ function App() {
         <h1>Trelloyes!</h1>
       </header>
       <div className="App-list">
-        <List/>
+        <List header="First List"/>
       </div>
       
     </main>
