@@ -8,7 +8,10 @@ function App() {
       <header className="App-header">
         <h1>Trelloyes!</h1>
       </header>
-      <List/>
+      <div className="App-list">
+        <List/>
+      </div>
+      
     </main>
   );
 }

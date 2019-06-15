@@ -2,9 +2,11 @@ import React from 'react';
 
 class List extends React.Component {
     render() {
-      return <div className="App-list">
-          Hello world!
-      </div>
+      return (
+      <section className="List">
+        
+      </section>
+      )
     }
   }
 
