@@ -2,17 +2,8 @@ import React from 'react';
 import './App.css';
 import List from './Components/List';
 
-class App extends React.Component {
-
-  static defaultProps = {
-    store: {
-      lists: [],
-      allCards: {}
-    }
-  }
-
-  render () {
-    const { store } = this.props;
+const App = (props) => {
+    const { store } = props;
     const lists = store.lists.map((list) => {
       const cards = list.cardIds.map(cardId => {
         return store.allCards[cardId];
@@ -29,6 +20,12 @@ class App extends React.Component {
       </div>
       
     </main>)
+  }
+
+App.defaultProps = {
+  store: {
+    lists: [],
+    allCards: {}
   }
 }
 
