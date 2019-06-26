@@ -15,7 +15,7 @@ const List = (props) => {
         </header>
         <div className="List-cards">
           {cards}
-          <button type="button" className="List-add-button">
+          <button type="button" className="List-add-button" onClick={() => props.addRandomCard(props.listId)}>
               + Add Random Card
           </button>
         </div>
