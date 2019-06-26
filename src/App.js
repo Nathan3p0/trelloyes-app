@@ -47,7 +47,13 @@ class App extends Component {
   }
 
   handleDeleteClick = (listId, cardId) => {
-    console.log('I\'m a ghost');
+    const updatedCardIds = this.state.lists[listId].cardIds.filter(card => card !== cardId)
+    
+    const newLists = this.state.lists.slice()
+    newLists[listId].cardIds = updatedCardIds
+    this.setState({
+      lists: newLists
+    })
   }
 
   newRandomCard = () => {
