@@ -45,12 +45,17 @@ class App extends Component {
       }
     }
   }
+
+  handleDeleteClick = (listId, cardId) => {
+    console.log('I\'m a ghost');
+  }
+
   render() {
-    const lists = this.state.lists.map((list) => {
+    const lists = this.state.lists.map((list, index) => {
       const cards = list.cardIds.map(cardId => {
         return this.state.allCards[cardId];
       })
-      return <List key={list.id} header={list.header} cards={cards}/>
+      return <List key={list.id} header={list.header} cards={cards} listId={index} handleDeleteClick={this.handleDeleteClick}/>
     })
 
     return (<main className='App'>
